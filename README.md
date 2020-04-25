@@ -103,7 +103,7 @@ These handlers are defined as standard Express middleware. Each defined hook wil
 
 #### ✅ Starting the server
 
-Afer writing your app, simply register it and start the server:
+After writing your app, simply register it and start the server:
 
 ```ts
 import Tela from '@efstajas/tela'
