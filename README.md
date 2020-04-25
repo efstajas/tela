@@ -129,3 +129,25 @@ tela.listen(8000).then(() => {
 ```
 
 Of course, you can run multiple apps at the same time by calling `registerApp` multiple times before calling `listen`. Each app will be initialized at `/appname/handlername`. `registerApp` also returns a `context` object that includes the paths for all handlers that were initialized within your app.
+
+#### 🚂 Accessing the internal Express instance
+
+If you need to add your own endpoints not part of an Intercom app to the internal server, like for example a `/health` endpoint, you can access the internal Express server instance directly:
+
+```ts
+import Tela from '@efstajas/tela'
+import App from './app'
+
+const tela = new Tela()
+
+tela.expressInstance.get('/health', (req, res, next) => {
+  res.send(200)
+  next()
+})
+
+tela.listen(8000).then(() => {
+  console.log(`Listening at 8000`)
+}).catch((e) => {
+  console.error(e)
+})
+```
