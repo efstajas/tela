@@ -4,7 +4,7 @@ Tela is a small framework for building [Intercom Canvas Kit applications](https:
 
 ### ⬇️ Install
 
-Simply install with npm or yarn.
+Simply install with npm or yarn. Tela is available on the NPM registry or GitHub Packages.
 
 ```
 npm install @efstajas/tela
