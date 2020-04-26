@@ -24,8 +24,15 @@ export type Handler = (
 export type CanvasHandler = (
   body: object,
   context: HandlerContext
-) => Promise<Component[]> | Component[]
+) => Promise<Component[] | HandlerResult> | Component[] | HandlerResult
 
+export interface HandlerResult {
+  components: Component[],
+  storedData?: {
+    [key: string]: string
+  },
+  contentUrl?: string
+}
 export interface App {
   initialize: CanvasHandler,
   submit?: CanvasHandler,

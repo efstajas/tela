@@ -103,6 +103,29 @@ export default class ExampleApp implements App {
 
 If you need to read information that Intercom sends with the requests, worry not: The first argument for your handler is Intercom's request `body`.
 
+#### 🗃 Returning stored_data and content_url
+
+If you need to send Intercom stored data values and / or a content URL for Live Canvasses in addition to components to construct a view, you can return the more verbose `HandlerResult` or a Promise resolving to a `HandlerResult` instead:
+
+```ts
+//your-app.ts
+import { App, HandlerResult } from '@efstajas/tela'
+
+export default class ExampleApp implements App {
+  public initialize = async (body): HandlerResult => {
+    return {
+      components: [ /* Your view… */ ],
+      storedData: {
+        foo: 'bar'
+      },
+      contentUrl: '' // Your Live Canvas Content URL
+    }
+  }
+}
+```
+
+`components` is of course required, while `storedData` and `contentUrl` are optional.
+
 #### 🌍 Handler Context
 
 Alongside the request `body` passed from Intercom, your handler also receives a `context` object as the second argument. The context includes the current app name your handler is running in, the app's base endpoint path along with two objects `hooks` and `methods`, which you can use to find out the app's other handler's endpoints at runtime.
