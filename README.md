@@ -195,7 +195,7 @@ tela.listen(8000).then(() => {
 
 #### 🚂 Accessing the internal Express instance
 
-If you need to add your own endpoints not part of an Intercom app to the internal server, like for example a `/health` endpoint, you can access the internal Express server instance directly. Please note that you should do this, as well as registering apps, only before calling `listen`.
+If you need to add your own endpoints not part of an Intercom app to the internal server, like for example a `/health` endpoint, you can access the internal Express server instance directly. Please note that you should do this and registering apps only before calling `listen`.
 
 ```ts
 import Tela from '@efstajas/tela'
