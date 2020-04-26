@@ -101,7 +101,7 @@ If you need to read information that Intercom sends with the requests, worry not
 
 #### 🌍 Handler Context
 
-Alongside the request `body` passed from Intercom, your handler also receives a `context` object as the second argument. The context includes the current app name your handler is running in, the app's base endpoint URL and two objects `hooks` and `methods`, which you can use to find out the app's other handler's endpoints at runtime.
+Alongside the request `body` passed from Intercom, your handler also receives a `context` object as the second argument. The context includes the current app name your handler is running in, the app's base endpoint path along with two objects `hooks` and `methods`, which you can use to find out the app's other handler's endpoints at runtime.
 
 ```ts
 public initialize = (requestBody, context: HandlerContext) => {
