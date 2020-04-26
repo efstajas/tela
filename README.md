@@ -71,7 +71,7 @@ To get your app up and running in Intercom, go read the official [Intercom Canva
 
 #### 🤚 Handlers
 
-In each app you can define up to three handlers: `initialize`, `submit` and `configure`. To understand what they're for, it's best to read [Intercom's documentation](https://developers.intercom.com/building-apps/docs/canvas-kit). In addition to a synchronous handler like in the Getting Started guide, you can also create asyn handlers, for example if you need to get some data for an API to create your components:
+In each app you can define up to three handlers: `initialize`, `submit` and `configure`. To understand what they're for, it's best to read [Intercom's documentation](https://developers.intercom.com/building-apps/docs/canvas-kit). In addition to a synchronous handler like in the Getting Started guide, you can also create async handlers, for example if you need to get some data for an API to create your components:
 
 ```ts
 //your-app.ts
