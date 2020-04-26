@@ -64,9 +64,9 @@ export interface DropdownComponent {
   id: string
   options: DropdownOption[]
   label?: string
-  value: string
-  save_state: 'unsaved' | 'saved' | 'failed'
-  disabled: boolean
+  value?: string
+  save_state?: 'unsaved' | 'saved' | 'failed'
+  disabled?: boolean
 }
 
 export interface TextComponent {
