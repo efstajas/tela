@@ -22,11 +22,13 @@ export default (
     res.send(buildCanvas(result))
   } else {
     res.send({
-      content: {
-        components: result.components
-      },
-      stored_data: result.storedData,
-      content_url: result.contentUrl
+      canvas: {
+        content: {
+          components: result.components
+        },
+        stored_data: result.storedData,
+        content_url: result.contentUrl
+      }
     })
   }
 
