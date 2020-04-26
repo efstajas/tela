@@ -193,7 +193,7 @@ import apps from './apps'
 
 const tela = new Tela()
 
-let promises: Promise<HandlerContext>[] = []
+let promises: Promise<void>[] = []
 
 apps.forEach((app) => {
   promises.push(
