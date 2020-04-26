@@ -1,6 +1,6 @@
 ## 🖼 Tela 
 
-Tela is a small framework for building [Intercom Canvas Kit applications](https://developers.intercom.com/building-apps/docs/canvas-kit). Write your apps as simple classes, run a server to receive calls to your app with one line, and get your canvasses type-checked with TypeScript.
+Tela is a small framework for building [Intercom Canvas Kit applications](https://developers.intercom.com/building-apps/docs/canvas-kit) in node. Write your apps as simple classes, run a server to receive calls to your app with one line, and get your canvasses type-checked with TypeScript.
 
 ### ⬇️ Install
 
