@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import buildCanvas from './methods/buildCanvas'
+import buildCanvas from './methods/build-canvas'
 import constructHandlerContext from './methods/construct-handler-context'
 import { CanvasHandler, App } from './app.types'
 
