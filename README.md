@@ -142,7 +142,7 @@ public initialize = (requestBody, context: HandlerContext) => {
 
 #### 🔌 Receiving webhooks in your app
 
-If you additionally need to receive external webhooks for your app, you can define hook handlers in a `public hooks` object:
+Often-times, you'll need to listen to external webhooks other than those for Canvas Kit and perform some action in response. You can define external webhook handlers in a `public hooks` object:
 
 ```ts
 public hooks = {
@@ -155,7 +155,7 @@ public hooks = {
 }
 ```
 
-These handlers are defined as standard Express middleware. Each defined hook will be initialized at `/appname/hookname*`.
+These handlers are defined as standard Express middleware. Each defined hook will be initialized at `/appname/hookname*` (Note the * — that means that a webhook coming in at `/appname/hookname/foobar` will still hit your handler).
 
 #### ✅ Starting the server
 
