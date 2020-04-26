@@ -147,7 +147,7 @@ Often-times, you'll need to listen to external webhooks other than those for Can
 ```ts
 public hooks = {
   hookName: (req, res, next, context) => {
-    logger.log('Handling hookName hook', LOGGER_NAME)
+    console.log(`Handling incoming webhook at ${context.endpoint}`)
 
     res.send(200)
     next()
