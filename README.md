@@ -89,7 +89,7 @@ export default class ExampleApp implements App {
     return [
       {
         type: 'text',
-        text: `The conversation is with a user called ${userData.name}.`,
+        text: `The user's favorite color is ${userData.favoriteColor}.`,
         style: 'paragraph'
       }
     ]
