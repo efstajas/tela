@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser'
 import { App } from './app.types'
 import constructHandlerContext from './methods/construct-handler-context'
 import constructRouter from './methods/construct-router'
-import validateApp from './methods/appValidator/validateApp'
+import validateApp from './methods/app-validator/validate-app'
 
 export default class Tela {
   private server = express().use(bodyParser.json());
