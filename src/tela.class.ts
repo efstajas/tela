@@ -4,11 +4,14 @@ import * as bodyParser from 'body-parser'
 import { App } from './app.types'
 import constructHandlerContext from './methods/construct-handler-context'
 import constructRouter from './methods/construct-router'
+import validateApp from './methods/appValidator/validateApp'
 
 export default class Tela {
   private server = express().use(bodyParser.json());
 
   public registerApp = async (appName: string, app: App) => {
+    validateApp(appName, app)
+
     const router = constructRouter(appName, app)
 
     const path = `/${appName.toLowerCase()}`
