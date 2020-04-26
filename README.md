@@ -41,7 +41,7 @@ export default class ExampleApp implements App {
 }
 ```
 
-Congratulations, you just implemented your first app. `initialize` is a `handler` — and initialize specifically is required, but you can also add `configure` and `submit` handlers if you need them. For your convenience, these handlers are a bit magic: Instead of handling response sending and canvas creation manually in each handler, you simply return either an array of Components or a Promise that resolves to an array of Components directly. Tela will automatically take care of wrapping your components to create a valid canvas definition and send it back to Intercom once your handler has resolved. Anyway — let's run our new app!
+Congratulations, you just implemented your first app. `initialize` is a `handler` — and initialize specifically is required, but you can also add `configure` and `submit` handlers if you need them. For your convenience, these handlers are a bit magic: Instead of you handling response sending and canvas creation manually in each handler, you simply return either an array of Components or a Promise that resolves to an array of Components directly. Tela will automatically take care of wrapping your components to create a valid canvas definition and send it back to Intercom once your handler has resolved. Anyway — let's run our new app!
 
 In a new file `index.ts`, import your app, create a new Tela instance, and register your app:
 
