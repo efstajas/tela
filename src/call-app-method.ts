@@ -16,8 +16,19 @@ export default (
     app
   ))
 
-  const components = await Promise.resolve(handlerResult)
+  const result = await Promise.resolve(handlerResult)
 
-  res.send(buildCanvas(components))
+  if (Array.isArray(result)) {
+    res.send(buildCanvas(result))
+  } else {
+    res.send({
+      content: {
+        components: result.components
+      },
+      stored_data: result.storedData,
+      content_url: result.contentUrl
+    })
+  }
+
   next()
 }
