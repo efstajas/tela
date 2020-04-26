@@ -63,7 +63,7 @@ Now that our app is registered, we can go ahead and start our server:
 tela.listen(8000)
 ```
 
-Now, go ahead and run — Congratulations, your server is now listening on port 8000. Try calling `POST /example-app/initialize`, and you'll see that you receive back a valid canvas defininion with the `text` component you defined in your `initialize handler.
+Go ahead and run the script — congratulations, your server is now listening on port 8000. Try calling `POST /example-app/initialize`, and you'll see that you receive back a valid canvas defininion with the `text` component you defined in your `initialize handler.
 
 ### 😎 Advanced usage
 
