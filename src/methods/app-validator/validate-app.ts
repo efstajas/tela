@@ -1,8 +1,8 @@
 import { App } from '../../app.types'
-import missingMethodTemplate from './errorTemplates/missingMethod'
-import hooksNotObjectTemplate from './errorTemplates/hooksNotObject'
-import handlerNotFunctionTemplate from './errorTemplates/handlerNotFunction'
-import hookNotFunctionTemplate from './errorTemplates/hookNotFunction'
+import missingMethodTemplate from './error-templates/missing-method'
+import hooksNotObjectTemplate from './error-templates/hooks-not-object'
+import handlerNotFunctionTemplate from './error-templates/handler-not-function'
+import hookNotFunctionTemplate from './error-templates/hook-not-function'
 
 export default (appName: string, app: App) => {
   const requiredMembers = ['initialize']
