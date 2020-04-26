@@ -109,8 +109,6 @@ Alongside the request `body` passed from Intercom, your handler also receives a 
 
 ```ts
 public initialize = (requestBody, context: HandlerContext) => {
-  logger.log('Initialize request', LOGGER_NAME)
-
   const {
     endpoint,
     appName,
