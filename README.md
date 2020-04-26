@@ -63,7 +63,9 @@ Now that our app is registered, we can go ahead and start our server:
 tela.listen(8000)
 ```
 
-Go ahead and run the script — congratulations, your server is now listening on port 8000. Try calling `POST /example-app/initialize`, and you'll see that you receive back a valid canvas defininion with the `text` component you defined in your `initialize handler.
+Go ahead and run the script — congratulations, your server is now listening on port 8000. Try calling `POST /example-app/initialize`, and you'll see that you receive back a valid canvas defininion with the `text` component you defined in your `initialize` handler.
+
+To get your app up and running in Intercom, go read the official [Intercom Canvas Kit documentation](https://developers.intercom.com/building-apps/docs/canvas-kit). It's quite simple!
 
 ### 😎 Advanced usage
 
