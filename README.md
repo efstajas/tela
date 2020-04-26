@@ -59,7 +59,7 @@ tela.registerApp('example-app', new YourApp())
 
 The first argument to `registerApp` is your app name — please make sure it's a URL-safe string, since it'll be used as a path for the server later. Please make sure you pass a new instance of your app, not the class itself!
 
-#### 3️⃣ Register your app
+#### 3️⃣ Start the server
 
 Now that our app is registered, we can go ahead and start our server:
 
