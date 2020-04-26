@@ -12,6 +12,8 @@ export default class Tela {
   public registerApp = async (appName: string, app: App) => {
     validateApp(appName, app)
 
+    const test = appName.isArray()
+
     const router = constructRouter(appName, app)
 
     const path = `/${appName.toLowerCase()}`
