@@ -72,7 +72,9 @@ export interface DropdownComponent {
 export interface TextComponent {
   type: 'text'
   text: string
-  style: 'muted' | 'paragraph' | 'header' | 'secondary'
+  align?: 'left' | 'center' | 'right'
+  style?: 'muted' | 'paragraph' | 'header' | 'error'
+  bottom_margin?: 'none'
 }
 
 export interface ButtonComponent {
