@@ -112,7 +112,7 @@ If you need to send Intercom stored data values and / or a content URL for Live 
 import { App, HandlerResult } from '@efstajas/tela'
 
 export default class ExampleApp implements App {
-  public initialize = async (body): HandlerResult => {
+  public initialize = async (body): Promise<HandlerResult> => {
     return {
       components: [ /* Your view… */ ],
       storedData: {
