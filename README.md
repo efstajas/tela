@@ -1,5 +1,7 @@
 # 🖼 Tela 
 
+![Node.js CI](https://github.com/efstajas/tela/workflows/Node.js%20CI/badge.svg)
+
 Tela is a small framework for building [Intercom Canvas Kit applications](https://developers.intercom.com/building-apps/docs/canvas-kit) in node. Write your apps as simple classes, run a server to receive calls to your app with one line, and get your canvasses type-checked with TypeScript.
 
 ## ⬇️ Install
