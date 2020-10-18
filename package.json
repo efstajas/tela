@@ -1,15 +1,21 @@
 {
   "name": "@efstajas/tela",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "A framework for building Intercom Canvas Kit applications.",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc"
   },
-  "keywords": ["intercom", "canvas kit", "custom apps", "express", "typescript"],
+  "keywords": [
+    "intercom",
+    "canvas kit",
+    "custom apps",
+    "express",
+    "typescript"
+  ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/efstajas/tela.git"
+    "type": "git",
+    "url": "https://github.com/efstajas/tela.git"
   },
   "author": "Jason Efstathiou",
   "license": "Apache-2.0",

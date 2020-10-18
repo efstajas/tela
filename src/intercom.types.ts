@@ -38,6 +38,7 @@ export interface InputOption {
   type: 'input'
   id: string
   label?: string
+  value?: string
   placeholder?: string
   disabled?: true
 }
