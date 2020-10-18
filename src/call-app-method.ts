@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import buildCanvas from './methods/build-canvas'
 import constructHandlerContext from './methods/construct-handler-context'
-import { CanvasHandler, App } from './app.types'
+import { CanvasHandler, App, ConfigureHandler } from './app.types'
 
 export default (
   appName: string,
@@ -9,7 +9,7 @@ export default (
   res: Response,
   next: NextFunction,
   app: App
-) => async (handler: CanvasHandler) => {
+) => async (handler: CanvasHandler | ConfigureHandler) => {
   const handlerResult = handler(req.body, constructHandlerContext(
     appName,
     `/${appName.toLowerCase()}`,
@@ -20,6 +20,10 @@ export default (
 
   if (Array.isArray(result)) {
     res.send(buildCanvas(result))
+  } else if ('results' in result) {
+    res.send({
+      results: result.results,
+    })
   } else {
     res.send({
       canvas: {
