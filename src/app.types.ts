@@ -26,6 +26,11 @@ export type CanvasHandler = (
   context: HandlerContext
 ) => Promise<Component[] | HandlerResult> | Component[] | HandlerResult
 
+export type ConfigureHandler = (
+  body: object,
+  context: HandlerContext,
+) => Promise<Component[] | HandlerResult | ConfigurationResult> | Component[] | HandlerResult | ConfigurationResult
+
 export interface HandlerResult {
   components: Component[],
   storedData?: {
@@ -33,10 +38,16 @@ export interface HandlerResult {
   },
   contentUrl?: string
 }
+
+export interface ConfigurationResult {
+  results: {
+    [key: string]: any
+  }
+}
 export interface App {
   initialize: CanvasHandler,
   submit?: CanvasHandler,
-  configure?: CanvasHandler,
+  configure?: ConfigureHandler,
   hooks?: {
     [key: string]: Handler
   }
