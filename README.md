@@ -105,6 +105,60 @@ export default class ExampleApp implements App {
 
 If you need to read information that Intercom sends with the requests, worry not: The first argument for your handler is Intercom's request `body`.
 
+#### 🖕 Middlewares
+
+Sometimes, you want to perform some logic after every incoming request and pass down some data to individual handlers. For that, you can use the `registerMiddleware` function.
+
+Let's say for example that we want to parse Intercom's `locale` context value from the incoming request, initialize an i18next instance for localization, and then pass it into each handler of our app for convenient usage.
+
+```ts
+tela.registerMiddleware(async (req, middlewareContext) => {
+  const body = req.body
+
+  const {
+    context: intercomContext
+  } = body
+
+  const browserLanguage = (intercomContext && intercomContext.locale) || 'en'
+
+  const t = await i18n(browserLanguage)
+
+  return {
+    ...middlewareContext,
+    t
+  }
+})
+```
+
+As you can see, `registerMiddleware` accepts any handler (promise or synchronous function). Your middleware gets the full express `req` object, as well as the previous' middleware's `middlewareContext` which will include what was returned by the previous middleware in the chain.
+
+Simply perform your logic and return an object that contains all previous middleware context and the new context added by this middleware handler. If you call `registerMiddleware` multiple times, all handlers will be executed for each incoming request.
+
+Within your app's handlers, you can now find your `middlewareContext` as part of the `context` argument.
+
+```ts
+//your-app.ts
+import { App, Component } from '@efstajas/tela'
+
+export default class ExampleApp implements App {
+  public initialize = async (body, context: HandlerContext): Promise<Component[]> => {
+    const {
+      middlewareContext
+    } = handlerContext
+
+    const { t } = middlewareContext
+
+    return [
+      {
+        type: 'text',
+        text: t('translation.key')
+        style: 'paragraph'
+      }
+    ]
+  }
+}
+```
+
 #### 🗃 Returning stored_data and content_url
 
 If you need to send Intercom stored data values and / or a content URL for Live Canvasses in addition to components to construct a view, you can return the more verbose `HandlerResult` or a Promise resolving to a `HandlerResult` instead:

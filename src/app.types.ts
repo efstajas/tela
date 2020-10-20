@@ -3,6 +3,7 @@ import { Component } from './intercom.types'
 
 export interface HandlerContext {
   endpoint: string
+  middlewareContext?: any
   appName: string
   methods: HandlerDescription
   hooks: HandlerDescription

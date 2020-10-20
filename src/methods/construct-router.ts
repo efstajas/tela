@@ -2,8 +2,9 @@ import { Router } from 'express'
 import { App } from '../app.types'
 import callHook from '../call-hook'
 import callAppMethod from '../call-app-method'
+import { MiddlewareHandler } from '../tela.types'
 
-export default (appName: string, app: App) => {
+export default (appName: string, app: App, middlewares: MiddlewareHandler[]) => {
   const router = Router()
 
   const appObject = app as {
@@ -34,7 +35,7 @@ export default (appName: string, app: App) => {
 
         router.post(
           path,
-          (req, res, next) => callAppMethod(appName, req, res, next, app)(appObject[key])
+          (req, res, next) => callAppMethod(appName, req, res, next, middlewares, app)(appObject[key])
         )
 
         break

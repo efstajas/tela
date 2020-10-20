@@ -3,7 +3,8 @@ import { HandlerContext, HandlerDescription, App } from '../app.types'
 export default (
   appName: string,
   path: string,
-  app: App
+  app: App,
+  middlewareContext?: any,
 ): HandlerContext => {
   const methods: HandlerDescription = {}
   const hooks: HandlerDescription = {}
@@ -27,5 +28,6 @@ export default (
     endpoint: `${path}`,
     methods,
     hooks,
+    middlewareContext
   }
 }
