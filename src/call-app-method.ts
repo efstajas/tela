@@ -2,18 +2,33 @@ import { Request, Response, NextFunction } from 'express'
 import buildCanvas from './methods/build-canvas'
 import constructHandlerContext from './methods/construct-handler-context'
 import { CanvasHandler, App, ConfigureHandler } from './app.types'
+import { MiddlewareHandler } from './tela.types'
 
 export default (
   appName: string,
   req: Request,
   res: Response,
   next: NextFunction,
+  middlewares: MiddlewareHandler[],
   app: App
 ) => async (handler: CanvasHandler | ConfigureHandler) => {
+  let middlewareContext = {};
+
+  const middlewarePromises: Promise<void>[] = [];
+
+  middlewares.forEach((middleware) => {
+    middlewarePromises.push((async () => {
+      middlewareContext = await Promise.resolve(middleware(req, middlewareContext))
+    })())
+  })
+
+  await Promise.all(middlewarePromises);
+
   const handlerResult = handler(req.body, constructHandlerContext(
     appName,
     `/${appName.toLowerCase()}`,
-    app
+    app,
+    middlewareContext
   ))
 
   const result = await Promise.resolve(handlerResult)
