@@ -33,6 +33,31 @@ export type Component =
   | DropdownComponent
   | InputOption
   | TextArea
+  | ListComponent
+
+export interface ListComponent {
+  type: 'list',
+  disabled?: boolean
+} 
+
+export interface ListComponentItem {
+  type: 'item'
+  id: string
+  title: string
+  subtitle?: string
+  tertiary_text?: string
+  image?: string
+  image_width?: number
+  image_height?: number
+  rounded_image?: boolean
+  disabled?: boolean
+  action?: {
+    type: 'url'
+    url: string
+  } | {
+    type: 'submit',
+  }
+}
 
 export interface InputOption {
   type: 'input'
