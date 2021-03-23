@@ -37,7 +37,8 @@ export type Component =
 
 export interface ListComponent {
   type: 'list',
-  disabled?: boolean
+  disabled?: boolean,
+  items: ListComponentItem[]
 } 
 
 export interface ListComponentItem {
