@@ -8,7 +8,7 @@ import validateApp from './methods/app-validator/validate-app'
 import { MiddlewareHandler } from './tela.types'
 
 export default class Tela {
-  private server = express().use(bodyParser.json());
+  private server = express().use(bodyParser.json({ limit: '50mb' }));
 
   private middlewares: MiddlewareHandler[] = [];
 
