@@ -32,8 +32,8 @@ export default class Tela {
   }
 
   public listen = (port: number): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      this.server.listen(port, (e) => {
+    return new Promise((resolve: () => void, reject: (arg0: any) => void) => {
+      this.server.listen(port, (e: any) => {
         if (e) {
           reject(e)
         } else {
