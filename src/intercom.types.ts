@@ -34,10 +34,12 @@ export type Component =
   | InputOption
   | TextArea
   | ListComponent
+  | Divider
 
 export interface ListComponent {
   type: 'list',
-  disabled?: boolean
+  disabled?: boolean,
+  items: ListComponentItem[]
 } 
 
 export interface ListComponentItem {
@@ -134,6 +136,12 @@ export interface ImageComponent {
 export interface Spacer {
   type: 'spacer'
   size: 's' | 'm' | 'l' | 'xl'
+}
+
+export interface Divider {
+  type: 'divider'
+  id?: string,
+  bottom_margin?: 'none'
 }
 
 export interface DataTableFieldValue {
